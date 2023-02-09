@@ -1,11 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
-from time import sleep
 import urllib3
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning) #проверка сертификата
 
 HUBS = {
+    "all":"https://habr.com/ru/all/",
     "programming":"https://habr.com/ru/hub/programming/",
     "python":"https://habr.com/ru/hub/python/",
     "read":"https://habr.com/ru/hub/read/"
