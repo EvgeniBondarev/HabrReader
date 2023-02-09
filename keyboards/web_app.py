@@ -3,9 +3,9 @@ from aiogram.utils.callback_data import CallbackData
 
 web_app = WebAppInfo(url="https://evhenos.github.io/")
 
-keyboard = ReplyKeyboardMarkup(
+app_keyboard = ReplyKeyboardMarkup(
     keyboard=[
-        [KeyboardButton(text="Site", web_app=web_app)]
+        [KeyboardButton(text="Хабы", web_app=web_app)]
     ],
     resize_keyboard=True
 )
