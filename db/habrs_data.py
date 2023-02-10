@@ -21,6 +21,12 @@ class Database:
         self.cursor.execute(query)
         return self.cursor.fetchall()
 
+    def new_user(self, user_id, habrs):
+        if self.is_user_exists(user_id):
+            self.update_user(user_id, habrs)
+        else:
+            self.add_user(user_id, habrs)
+
     def add_user(self, user_id, habrs):
         query = f"INSERT INTO users (id, habrs) VALUES ({user_id}, '{habrs}')"
         self.execute_query(query)
