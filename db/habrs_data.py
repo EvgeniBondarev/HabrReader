@@ -44,5 +44,11 @@ class Database:
         result = self.select_query(query)
         return bool(result)
 
+    def get_habrs(self, user_id):
+        self.cursor.execute(
+            '''SELECT habrs FROM users WHERE id=?''', (user_id,)
+        )
+        return self.cursor.fetchone()[0].split(",")
+
     def __del__(self):
         self.conn.close()

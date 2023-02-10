@@ -11,5 +11,5 @@ dp = Dispatcher(bot, loop)
 db = Database("db/useres.db")
 
 if __name__ == '__main__':
-    from handlers.command import dp
+    from handlers.commands import dp
     executor.start_polling(dp)
