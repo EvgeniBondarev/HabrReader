@@ -21,7 +21,7 @@ class Database:
         self.cursor.execute(query)
         return self.cursor.fetchall()
 
-    def new_user(self, user_id, habrs):
+    def change_user(self, user_id, habrs):
         if self.is_user_exists(user_id):
             self.update_user(user_id, habrs)
         else:
