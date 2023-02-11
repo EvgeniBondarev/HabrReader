@@ -19,15 +19,16 @@ def pars_posts(user_habrs):
         all_habrs = []
 
         for post in posts:
-            post_id = post.get("id")
             link = post.find("a", class_="tm-article-snippet__title-link").get("href")
             rating = post.find("div", class_="tm-data-icons").find("div", class_="tm-votes-meter tm-data-icons__item").find("svg", class_="tm-svg-img tm-votes-meter__icon tm-votes-meter__icon tm-votes-meter__icon_appearance-article").find("title").text
+            reading_time = post.find('span', class_="tm-article-reading-time__label").text
 
             all_habrs.append({
-                "post_id": post_id,
                 "link": "https://habr.com" + link,
-                "rating": rating
+                "rating": rating,
+                "reading_time": "Время прочтения:" + reading_time.replace("\n", "")
             })
+        print(reading_time)
 
         return all_habrs
 
