@@ -32,7 +32,8 @@ async def start(message: Message):
 async def send_posts(chat_id, posts_data):
     for post in posts_data:
         await bot.send_message(chat_id,
-                               text=f"{fmt.hide_link(post['link'])}{post['rating']}\n{post['reading_time']}")
+                               text=f"<a href='{post['link']}'>{fmt.hide_link(post['link'])}{post['rating']}\n{post['reading_time']}\n{post['type']}</a>",
+                               parse_mode="HTML")
 
     await bot.send_message(chat_id, "Ваши хабры:", reply_markup=greet_kb1)
 
