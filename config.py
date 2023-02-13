@@ -1,3 +1,3 @@
 TOKENS = {
-    "bot_token": "5822846454:AAEIaNGPnynn799YITKc4tLRVwN5iX4ta6E",
+    "bot_token": "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11",
 }
